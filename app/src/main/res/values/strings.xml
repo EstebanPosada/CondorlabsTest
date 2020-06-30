@@ -3,4 +3,5 @@
     <string name="stadium_name">Stadium: %s</string>
     <string name="foundation_year">Foundation year: %s</string>
     <string name="event_list">- %s (%s)</string>
+    <string name="leagues">Leagues</string>
 </resources>

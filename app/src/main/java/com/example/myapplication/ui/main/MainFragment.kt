@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.example.myapplication.R
 import com.example.myapplication.app.BaseFragment
 import com.example.myapplication.databinding.MainFragmentBinding
 import com.example.myapplication.service.model.League
@@ -40,7 +41,7 @@ class MainFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.title.text = "Teams"
+        binding.title.text = getString(R.string.leagues)
         binding.rvTeams.apply {
             adapter = teamAdapter
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
