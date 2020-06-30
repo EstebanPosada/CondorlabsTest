@@ -1,5 +1,6 @@
 package com.example.myapplication.di
 
+import com.example.myapplication.BuildConfig
 import com.example.myapplication.app.Constants
 import com.example.myapplication.service.database.LocalDataSource
 import com.example.myapplication.service.database.RoomDataSource
@@ -10,6 +11,7 @@ import com.google.gson.GsonBuilder
 import com.google.gson.internal.bind.DateTypeAdapter
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -22,7 +24,7 @@ val appModule = module {
 
     single { MainRepositoryImpl(get()) as MainRepository }
 
-    single { TeamDatabase.build(get()) }
+    single { TeamDatabase.build(androidContext()) }
     factory<LocalDataSource> { RoomDataSource(get()) }
 }
 
@@ -49,6 +51,7 @@ val remoteModule = module {
     single {
         Retrofit.Builder()
             .baseUrl("https://www.thesportsdb.com/api/v1/json/1/")
+//            .baseUrl(BuildConfig.BUILD_TYPE)
             .addConverterFactory(get() as GsonConverterFactory)
             .client(get() as OkHttpClient)
             .build()

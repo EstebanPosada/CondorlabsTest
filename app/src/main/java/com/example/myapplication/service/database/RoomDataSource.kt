@@ -17,7 +17,7 @@ class RoomDataSource(db: TeamDatabase) : LocalDataSource {
 
     override suspend fun getTeams(): List<Team> = withContext(Dispatchers.IO) { teamDao.getAll() }
 
-    override suspend fun findById(id: Int): Team =
+    override suspend fun findById(id: String): Team =
         withContext(Dispatchers.IO) { teamDao.findById(id) }
 
     override suspend fun update(team: Team) {

@@ -6,6 +6,6 @@ interface LocalDataSource {
     suspend fun isEmpty(): Boolean
     suspend fun saveTeams(teams: List<Team>)
     suspend fun getTeams(): List<Team>
-    suspend fun findById(id: Int): Team
+    suspend fun findById(id: String): Team
     suspend fun update(team: Team)
 }

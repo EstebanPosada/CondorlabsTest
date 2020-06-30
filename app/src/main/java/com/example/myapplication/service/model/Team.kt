@@ -1,6 +1,11 @@
 package com.example.myapplication.service.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class Team(
+    @PrimaryKey
     val idTeam: String,
     val idAPIfootball: String,
     val strStadium: String,
@@ -12,7 +17,11 @@ data class Team(
     val strTeamJersey: String,
     val strDescriptionEN: String,
     val strDescriptionES: String,
-    val intFormedYear: String
+    val intFormedYear: String,
+    val strWebsite: String,
+    val strFacebook: String,
+    val strTwitter: String,
+    val strInstagram: String
 )
 
 data class Teams(
