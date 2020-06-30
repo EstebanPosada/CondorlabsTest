@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app1="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/badge_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        android:layout_marginEnd="@dimen/dimen_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/dimen_20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/alternate_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/badge_img"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Team Name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/alternate_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app1:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintBottom_toTopOf="@id/stadium_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:text="Alternate Name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/stadium_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app1:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/alternate_name"
+        tools:text="Stadium Name" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
